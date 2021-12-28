@@ -1,0 +1,38 @@
+# HTTP Server
+[server]
+Address = ":8001"
+#ServerRoot = "public"
+ServerAgent = "tcsd-api"
+LogPath = "/tmp/log/gf-app/tcsd-api"
+
+# Logger.
+[logger]
+Path = "/tmp/log/tcsd-api"
+Level = "all"
+Stdout = true
+
+# Template.
+#[viewer]
+#Path = "template"
+#DefaultFile = "index.html"
+#Delimiters = ["{{", "}}"]
+
+# Database.
+[database]
+link = "mysql:root:root@tcp(127.0.0.1:3306)/tcsd"
+debug = true
+# Database logger.
+[database.logger]
+Path = "/tmp/log/gf-app/tcsd/sql"
+Level = "all"
+Stdout = true
+[gfcli]
+[[gfcli.gen.dao]]
+link = "mysql:root:root@tcp(127.0.0.1:3306)/tcsd"
+tables = ""
+
+
+[mini_program]
+appid = "wx84ccaa3f90e9bec4"
+secret = "b45688343375d5dafddff920923757ac"
+
